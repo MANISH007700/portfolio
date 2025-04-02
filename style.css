@@ -1,0 +1,434 @@
+/* Basic Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    line-height: 1.6;
+}
+
+a {
+    color: #bb86fc; /* Purple accent for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(18, 18, 18, 0.8); /* Slightly transparent dark */
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.cta-button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.cta-button.primary {
+    background-color: #bb86fc;
+    color: #121212;
+    border-color: #bb86fc;
+}
+
+.cta-button.primary:hover {
+    background-color: #a76ff0;
+    text-decoration: none;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #bb86fc;
+    border: 1px solid #bb86fc;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(187, 134, 252, 0.1);
+    text-decoration: none;
+}
+
+nav .cta-button { /* Header specific CTA */
+    background-color: #e53e3e; /* Red like example */
+    color: #ffffff;
+    border: none;
+}
+
+nav .cta-button:hover {
+    background-color: #c53030;
+    text-decoration: none;
+}
+
+
+/* Hero Section */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 8rem 5% 2rem; /* Add top padding to account for fixed header */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.greeting {
+    font-size: 1rem;
+    color: #aaaaaa;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #e53e3e; /* Red accent */
+    margin-bottom: 1.5rem;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.social-links a img {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover img {
+    opacity: 1;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 450px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    border-radius: 50%; /* Circular image */
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Control max size */
+    border: 5px solid #333; /* Optional border */
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Ensure it's perfectly round */
+}
+
+/* General Section Styling */
+section {
+    padding: 5rem 5% 3rem; /* Increased top padding */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    position: relative; /* For potential pseudo-elements */
+}
+
+section:nth-child(odd) { /* Alternate background slightly */
+    background-color: #1a1a1a;
+}
+
+/* About Section */
+#about .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #b0b0b0;
+}
+
+#about .about-content p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Experience Section */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    /* Add a timeline indicator later if desired */
+}
+
+.experience-item {
+    background-color: #222; /* Slightly lighter card background */
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #e53e3e; /* Accent border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.experience-item h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+}
+
+.company-info {
+    font-size: 1rem;
+    color: #aaaaaa;
+    margin-bottom: 0.5rem;
+}
+
+.company-info a {
+    color: #bb86fc;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.experience-item ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    color: #b0b0b0;
+}
+
+.experience-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #222;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+}
+
+.project-card p {
+    color: #b0b0b0;
+    flex-grow: 1; /* Make text fill space */
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.project-links a {
+    color: #bb86fc;
+    font-weight: 500;
+    margin-right: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.project-tags {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tags span, .skill-tag {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem; /* Adjust padding */
+    }
+
+    .hero-content {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 2rem;
+        max-width: 350px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    nav ul {
+        display: none; /* Simple responsive: hide nav links on smaller screens */
+        /* Add burger menu logic later if needed */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    .intro {
+        font-size: 1rem;
+    }
+    section h2 {
+        font-size: 2rem;
+    }
+}

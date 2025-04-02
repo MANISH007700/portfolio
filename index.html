@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Sharma - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Manish Sharma</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Hire Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <p class="greeting">HELLO, I'M</p>
+                <h1>Manish Sharma</h1>
+                <h2>Machine Learning Engineer</h2>
+                <p class="intro">
+                    Dynamic and results-oriented Machine Learning Engineer with experience
+                    specializing in architecting scalable solutions and leading transformative projects.
+                    Proven track record of diagnosing complex challenges, delivering innovative
+                    solutions, and fostering collaborative team environments.
+                </p>
+                <div class="hero-buttons">
+                    <a href="Manish_Sharma_Resume.pdf" download class="cta-button primary">Download Resume</a>
+                    <a href="#contact" class="cta-button secondary">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:manish.sharma.dev@email.com" target="_blank" aria-label="Email"><img src="images/email-icon.svg" alt="Email"></a>
+                    <a href="https://github.com/MANISH007700/" target="_blank" aria-label="GitHub"><img src="images/github-icon.svg" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" aria-label="LinkedIn"><img src="images/linkedin-icon.svg" alt="LinkedIn"></a>
+                    <a href="https://x.com/lucifer_x007" target="_blank" aria-label="Twitter"><img src="images/twitter-icon.svg" alt="Twitter"></a>
+                    <a href="https://www.kaggle.com/monal007" target="_blank" aria-label="Kaggle"><img src="images/kaggle-icon.svg" alt="Kaggle"></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/manish_sharma.jpg" alt="Manish Sharma">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>
+                    Results-driven Machine Learning Engineer based in Bangalore with a passion for building intelligent systems and solving complex problems. Experienced in developing and deploying end-to-end ML solutions, from data preprocessing and model training to API integration and performance optimization. Skilled in leveraging cutting-edge technologies like Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and various deep learning architectures (LayoutLM, YOLO, T5). Proven ability to reduce latency, improve accuracy, and automate processes, delivering significant value to projects and clients. Eager to contribute expertise to innovative AI-driven initiatives.
+                </p>
+                <p>Location: Bangalore, 560068</p>
+                <p>Phone: +91-9342533525</p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <h3>Machine Learning Engineer - 2</h3>
+                    <p class="company-info">Parspec.io, Bangalore | <a href="https://parspec.io/" target="_blank">Website</a> | <a href="https://www.linkedin.com/company/parspec/" target="_blank">LinkedIn</a></p>
+                    <p class="date">Jan 2024 – Present</p>
+                    <ul>
+                        <li>Engineered wireframes and architected EPICOR CRM Integration within Parspec Inventory PF Tools.</li>
+                        <li>Reduced model number to datasheet mapping latency by 80% using Cache and Gemini 2.0 Flash LLM.</li>
+                        <li>Fine-tuned Llama 3.3 70B Instruct Model on a custom dataset for attribute extraction (Modal Labs H100).</li>
+                        <li>Developed an unstructured model-number to datasheet mapping system using heuristics and OSS LLMs.</li>
+                        <li>Achieved 90% accuracy matching model numbers across 5M documents; 91% attribute extraction accuracy.</li>
+                        <li>Enhanced header/column detection algorithm (4 to 8 columns, 97% accuracy), reducing manual processing by 30%.</li>
+                        <li>Designed and deployed an order information detection algorithm (T5-base, 95% accuracy).</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Machine Learning Scientist</h3>
+                    <p class="company-info">Docsumo-AI, Bangalore | <a href="https://docsumo.com/" target="_blank">Website</a> | <a href="https://www.linkedin.com/company/docsumo/" target="_blank">LinkedIn</a></p>
+                    <p class="date">Dec 2022 – Dec 2023</p>
+                    <ul>
+                        <li>Designed and implemented advanced Document KV + Table Extractor (LayoutLM, BROS, YOLO).</li>
+                        <li>Integrated ML/DL architectures into 10+ Custom APIs for clients (MRR $80K-100K).</li>
+                        <li>Built and integrated Chat-AI using LangChain and PineCone-DB for QA/support tasks.</li>
+                        <li>Reduced annotation time from 1 day to ~2hrs using GPT-KV LLM Extractor (GPT-4).</li>
+                        <li>Implemented advanced Synthetic Data Generation Pipeline (FP-Tree algos), outperforming production APIs.</li>
+                        <li>Worked on KV/Checkbox Extraction for forms like Insurance (1040, 1120s, W9s), Bank Cheques.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Research Assistant Intern</h3>
+                    <p class="company-info">Indian Institute of Science, Bangalore</p>
+                    <p class="date">June 2021 – Sep 2021</p>
+                    <ul>
+                        <li>Collated and preprocessed massive Hindi datasets for OCR and Speech Recognition.</li>
+                        <li>Leveraged PyTesseract and EasyOCR for text extraction; evaluated using WordLevel Accuracy.</li>
+                        <li>Worked with Librosa and MelSpectrogram for ASR tasks.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects / Side Builds</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>V-Rag [Video Based RAG System]</h3>
+                    <p>Developed a system allowing users to query video content via YouTube URL or uploaded videos. Implemented video chunking/indexing with Qdrant, integrated a QA pipeline, experimented with vector databases, and deployed with Streamlit.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/MANISH007700/V-RAG" target="_blank">Github</a> | <a href="#" target="_blank">Loom (Add Link)</a>
+                    </div>
+                    <div class="project-tags">
+                        <span>Qdrant</span><span>RAG</span><span>Video-Querying</span><span>Streamlit</span><span>Vector DB</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>GeoPuzzle [Geography Quiz App]</h3>
+                    <p>Extracted data of 10,000+ global places using Selenium/BS4, cleaned/tagged data, added interactive game features, and built a UI using Lovable UI framework.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Game Link (Add Link)</a> | <a href="https://x.com/lucifer_x007/status/1749351160005054887" target="_blank">Twitter</a>
+                    </div>
+                     <div class="project-tags">
+                        <span>PIL</span><span>Lovable UI</span><span>Web Scraping</span><span>Selenium</span><span>BeautifulSoup</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>AutoCommit Generator</h3>
+                    <p>Built an AutoCommit Generator using Ollama and Mistral for local commit message generation. Fully local, privacy-focused, simple bash script integration (<100 lines of code).</p>
+                     <div class="project-links">
+                        <a href="https://github.com/MANISH007700/autocommit" target="_blank">Github</a> | <a href="https://x.com/lucifer_x007/status/1749351160005054887" target="_blank">Twitter</a>
+                    </div>
+                    <div class="project-tags">
+                        <span>Mistral</span><span>Ollama</span><span>Github</span><span>LLM</span><span>Bash</span><span>Local AI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                 <span class="skill-tag">LLMs (Llama 3, Gemini, T5, GPT-4)</span>
+                 <span class="skill-tag">RAG</span>
+                 <span class="skill-tag">Fine-Tuning</span>
+                 <span class="skill-tag">LangChain</span>
+                 <span class="skill-tag">PineCone DB</span>
+                 <span class="skill-tag">LayoutLM</span>
+                 <span class="skill-tag">BROS</span>
+                 <span class="skill-tag">YOLO</span>
+                 <span class="skill-tag">OCR (PyTesseract, EasyOCR)</span>
+                 <span class="skill-tag">ASR (Librosa)</span>
+                 <span class="skill-tag">Python</span>
+                 <span class="skill-tag">API Development</span>
+                 <span class="skill-tag">CRM Integration</span>
+                 <span class="skill-tag">Web Scraping (Selenium, BS4)</span>
+                 <span class="skill-tag">Vector Databases (Qdrant)</span>
+                 <span class="skill-tag">Synthetic Data Generation</span>
+                 <span class="skill-tag">Data Preprocessing</span>
+                 <span class="skill-tag">Git/GitHub</span>
+                 <span class="skill-tag">Bash Scripting</span>
+                 <span class="skill-tag">Streamlit</span>
+                 <span class="skill-tag">Ollama</span>
+                 <span class="skill-tag">Modal Labs</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Interested in collaborating or have a question? Feel free to reach out!</p>
+            <div class="contact-methods">
+                 <a href="mailto:manish.sharma.dev@email.com" class="cta-button primary">Send Email</a>
+                 <a href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" class="cta-button secondary">Connect on LinkedIn</a>
+            </div>
+             <p style="margin-top: 2rem;">Phone: +91-9342533525 | Location: Bangalore, 560068</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Manish Sharma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
