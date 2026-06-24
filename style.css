@@ -299,34 +299,6 @@ img {
   object-position: center 20%;
 }
 
-.terminal-card {
-  position: absolute;
-  right: 24px;
-  bottom: -34px;
-  width: min(320px, 82%);
-  padding: 16px;
-  border: 1px solid var(--ink);
-  border-radius: 8px;
-  background: #101514;
-  color: #d3f8df;
-  box-shadow: var(--shadow);
-}
-
-.terminal-card span {
-  display: block;
-  margin-bottom: 10px;
-  color: #91d5ff;
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.terminal-card code {
-  color: #d8ffe1;
-  font-family: "SFMono-Regular", Consolas, monospace;
-  font-size: 0.82rem;
-  line-height: 1.65;
-}
-
 .about-grid,
 .contact-section {
   display: grid;
@@ -353,17 +325,66 @@ img {
   margin-bottom: 36px;
 }
 
+.credentials-section {
+  border-top: 1px solid var(--line);
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.credentials-grid article {
+  padding: 24px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 8px 8px 0 rgba(15, 118, 110, 0.14);
+}
+
+.credentials-grid span {
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.credentials-grid h3 {
+  margin-top: 10px;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.credentials-grid p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.credentials-grid ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  padding-left: 20px;
+  color: #3e3b35;
+}
+
 .timeline {
   display: grid;
-  gap: 22px;
+  gap: 0;
 }
 
 .timeline-item {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
   gap: 28px;
-  padding: 26px 0;
+  padding: 38px 0;
   border-top: 1px solid var(--line);
+}
+
+.timeline-item.featured-work {
+  grid-template-columns: 210px minmax(0, 1fr);
+  padding: 44px 0;
 }
 
 .timeline-meta {
@@ -382,8 +403,48 @@ img {
 
 .timeline-content h3 {
   margin-bottom: 12px;
-  font-size: 1.45rem;
+  font-size: 1.65rem;
   line-height: 1.2;
+}
+
+.work-summary {
+  max-width: 860px;
+  margin-bottom: 18px;
+  color: #37342f;
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+
+.case-tags,
+.case-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-tags {
+  margin-bottom: 22px;
+}
+
+.case-tags span {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.case-details {
+  display: grid;
+  gap: 10px;
+  max-width: 920px;
+  color: #3f3b35;
+}
+
+.case-details p {
+  margin: 0;
 }
 
 .timeline-content ul {
@@ -391,6 +452,22 @@ img {
   gap: 9px;
   padding-left: 20px;
   color: #3e3b35;
+}
+
+.case-metrics {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.case-metrics span {
+  color: var(--accent-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.case-metrics strong {
+  color: var(--ink);
 }
 
 .project-grid {
@@ -472,14 +549,15 @@ img {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 28px;
 }
 
 .skills-grid article {
-  padding: 22px;
-  border-left: 4px solid var(--accent);
-  background: rgba(255, 255, 255, 0.62);
+  min-height: 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  background: transparent;
 }
 
 .skills-grid h3 {
@@ -487,8 +565,20 @@ img {
   font-size: 1.08rem;
 }
 
-.skills-grid p {
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-list span {
+  padding: 6px 9px;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
   color: #3f3b35;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .contact-section {
@@ -565,8 +655,14 @@ img {
   .hero,
   .about-grid,
   .contact-section,
+  .credentials-grid,
   .timeline-item {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-item.featured-work {
+    grid-template-columns: 1fr;
+    padding: 34px 0;
   }
 
   .hero {
@@ -580,6 +676,10 @@ img {
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-card {
@@ -619,14 +719,6 @@ img {
 
   .button {
     width: 100%;
-  }
-
-  .terminal-card {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    margin-top: 20px;
   }
 
   .skills-grid {
