@@ -1,27 +1,70 @@
+const header = document.querySelector(".site-header");
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
+const navItems = Array.from(document.querySelectorAll(".nav-links a"));
+const sections = navItems
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
 
-// Portfolio JavaScript
-// Example: Smooth scrolling for navigation links (optional)
-document.querySelectorAll('nav ul li a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+const closeMenu = () => {
+  document.body.classList.remove("nav-open");
+  navToggle?.setAttribute("aria-expanded", "false");
+  navLinks?.classList.remove("open");
+};
 
-    const targetId = this.getAttribute("href");
-    const targetElement = document.querySelector(targetId);
+navToggle?.addEventListener("click", () => {
+  const isOpen = navLinks?.classList.toggle("open");
+  document.body.classList.toggle("nav-open", Boolean(isOpen));
+  navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+});
 
-    if (targetElement) {
-      // Calculate position, considering the fixed header height
-      const headerOffset = document.querySelector("header").offsetHeight;
-      const elementPosition = targetElement.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", (event) => {
+    const target = document.querySelector(anchor.getAttribute("href"));
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+    if (!target) {
+      return;
     }
+
+    event.preventDefault();
+
+    const headerOffset = header?.offsetHeight || 0;
+    const targetPosition =
+      target.getBoundingClientRect().top + window.scrollY - headerOffset - 12;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+
+    closeMenu();
   });
 });
 
-// Add more interactivity here later if needed
-console.log("Portfolio script loaded.");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      navItems.forEach((link) => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === `#${entry.target.id}`
+        );
+      });
+    });
+  },
+  {
+    rootMargin: "-35% 0px -55% 0px",
+    threshold: 0,
+  }
+);
+
+sections.forEach((section) => observer.observe(section));
+
+const year = document.querySelector("#year");
+if (year) {
+  year.textContent = new Date().getFullYear();
+}

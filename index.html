@@ -3,247 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manish Sharma - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Manish Sharma is a Lead AI Engineer building multi-agent systems, RAG platforms, document AI, and production GenAI workflows.">
+    <title>Manish Sharma - Lead AI Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="manish_sharma.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Manish Sharma</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button">Hire Me</a>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand" href="#hero" aria-label="Manish Sharma home">
+                <span>Manish Sharma</span>
+                <small>Lead AI Engineer</small>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a class="nav-action" href="mailto:manish.tinkering@gmail.com?subject=AI%20Engineering%20Opportunity%20for%20Manish">Email me</a>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <div class="hero-content">
-                <p class="greeting">HELLO, I'M</p>
-                <h1>Manish Sharma</h1>
-                <h2 class="role">Machine Learning Developer</h2>
-                <div class="hero-buttons">
-                    <a href="Manish-Sharma-July-2025.pdf" download class="cta-button primary">Download Resume</a>
-                    <a href="#contact" class="cta-button secondary">Contact Me</a>
+        <section id="hero" class="hero section">
+            <div class="hero-copy">
+                <p class="eyebrow">Applied AI | Multi-agent systems | RAG | Document intelligence</p>
+                <h1>Building production-grade AI systems that get past the demo.</h1>
+                <p class="intro">
+                    I am Manish, a Bangalore-based Lead AI Engineer focused on agent orchestration, retrieval systems,
+                    evaluation workflows, multimodal evidence, and cloud deployments for enterprise AI products.
+                </p>
+                <div class="availability">
+                    <span class="pulse" aria-hidden="true"></span>
+                    Open for contract work and full-time AI engineering roles
                 </div>
-                <div class="social-links">
-                    <a href="mailto:monalmonal007@gmail.com" target="_blank" aria-label="Email">
-                        <img src="images/GMAIL.svg" alt="Email">
+                <div class="hero-actions">
+                    <a class="button primary" href="Manish-Sharma-Resume-2026.pdf" download>Download resume</a>
+                    <a class="button secondary" href="#contact">Start a conversation</a>
+                </div>
+                <div class="social-links" aria-label="Social links">
+                    <a href="mailto:manish.tinkering@gmail.com" aria-label="Email Manish">
+                        <img src="images/GMAIL.svg" alt="">
                     </a>
-                    <a href="https://github.com/MANISH007700/" target="_blank" aria-label="GitHub">
-                        <img src="images/GITHUB.svg" alt="GitHub">
+                    <a href="https://github.com/MANISH007700/" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+                        <img src="images/GITHUB.svg" alt="">
                     </a>
-                    <a href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" aria-label="LinkedIn">
-                        <img src="images/LINKEDIN.svg" alt="LinkedIn">
+                    <a href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+                        <img src="images/LINKEDIN.svg" alt="">
                     </a>
-                    <a href="https://x.com/lucifer_x007" target="_blank" aria-label="Twitter">
-                        <img src="images/TWITTER.svg" alt="Twitter">
+                    <a href="https://x.com/lucifer_x007" target="_blank" rel="noreferrer" aria-label="X profile">
+                        <img src="images/TWITTER.svg" alt="">
                     </a>
-                    <a href="https://www.kaggle.com/monal007" target="_blank" aria-label="Kaggle">
-                        <img src="images/KAGGLE.svg" alt="Kaggle">
+                    <a href="https://www.kaggle.com/monal007" target="_blank" rel="noreferrer" aria-label="Kaggle profile">
+                        <img src="images/KAGGLE.svg" alt="">
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="manish_sharma.jpg" alt="Manish Sharma" style="transform: translateY(-30px) scale(1.2)">
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>I make AI work for real and complex use cases. Not just flashy demos  🚀 </p>
-                <p>Location: Bangalore, 560068</p>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="experience-container">
-                <div class="experience-item">
-                    <h3>Machine Learning Engineer - 2</h3>
-                    <p class="company-info">
-                        Parspec.io, Bangalore | 
-                        <a href="https://parspec.io/" target="_blank">Website</a> | 
-                        <a href="https://www.linkedin.com/company/parspec/" target="_blank">LinkedIn</a>
-                    </p>
-                    <p class="date">Jan 2024 – Present</p>
-                    <ul>
-                        <li>Engineered wireframes and architected EPICOR CRM Integration within Parspec Inventory PF Tools.</li>
-                        <li>Reduced model number to datasheet mapping latency by 80% using Cache and Gemini 2.0 Flash LLM.</li>
-                        <li>Fine-tuned Llama 3.3 70B Instruct Model on a custom dataset for attribute extraction (Modal Labs H100).</li>
-                        <li>Developed an unstructured model-number to datasheet mapping system using heuristics and OSS LLMs.</li>
-                        <li>Achieved 90% accuracy matching model numbers across 5M documents; 91% attribute extraction accuracy.</li>
-                        <li>Enhanced header/column detection algorithm (4 to 8 columns, 97% accuracy), reducing manual processing by 30%.</li>
-                        <li>Designed and deployed an order information detection algorithm (T5-base, 95% accuracy).</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Machine Learning Scientist</h3>
-                    <p class="company-info">
-                        Docsumo-AI, Bangalore | 
-                        <a href="https://docsumo.com/" target="_blank">Website</a> | 
-                        <a href="https://www.linkedin.com/company/docsumo/" target="_blank">LinkedIn</a>
-                    </p>
-                    <p class="date">Dec 2022 – Dec 2023</p>
-                    <ul>
-                        <li>Designed and implemented advanced Document KV + Table Extractor (LayoutLM, BROS, YOLO).</li>
-                        <li>Integrated ML/DL architectures into 10+ Custom APIs for clients (MRR $80K-100K).</li>
-                        <li>Built and integrated Chat-AI using LangChain and PineCone-DB for QA/support tasks.</li>
-                        <li>Reduced annotation time from 1 day to ~2hrs using GPT-KV LLM Extractor (GPT-4).</li>
-                        <li>Implemented advanced Synthetic Data Generation Pipeline (FP-Tree algos), outperforming production APIs.</li>
-                        <li>Worked on KV/Checkbox Extraction for forms like Insurance (1040, 1120s, W9s), Bank Cheques.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Research Assistant Intern</h3>
-                    <p class="company-info">Indian Institute of Science, Bangalore</p>
-                    <p class="date">June 2021 – Sep 2021</p>
-                    <ul>
-                        <li>Collated and preprocessed massive Hindi datasets for OCR and Speech Recognition.</li>
-                        <li>Leveraged PyTesseract and EasyOCR for text extraction; evaluated using WordLevel Accuracy.</li>
-                        <li>Worked with Librosa and MelSpectrogram for ASR tasks.</li>
-                    </ul>
+            <div class="hero-media" aria-label="Portrait and focus areas">
+                <img src="manish_sharma.jpg" alt="Manish Sharma">
+                <div class="terminal-card" aria-hidden="true">
+                    <span>focus.py</span>
+                    <code>
+                        agents = ["CSR", "PLPS", "DSUR"]<br>
+                        stack = ["AWS", "EKS", "RAG"]<br>
+                        ship(eval_first=True)
+                    </code>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects / Side Builds</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <h3>V-Rag [Video Based RAG System]</h3>
-                    <p>Developed a system allowing users to query video content via YouTube URL or uploaded videos. Implemented video chunking/indexing with Qdrant, integrated a QA pipeline, experimented with vector databases, and deployed with Streamlit.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/MANISH007700/VideoRAG-System/tree/master" target="_blank">Github</a> |
-                        <a href="https://www.loom.com/share/c0b4aa38a47e456288c9876d7b260b93?sid=0ccaa690-f8b6-4a34-9537-fbc22d1ef9e9" target="_blank">Loom</a>
-                    </div>
-                    <div class="project-tags">
-                        <span>Qdrant</span><span>RAG</span><span>Video-Querying</span><span>Streamlit</span><span>Vector DB</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>GeoPuzzle [Geography Quiz App]</h3>
-                    <p>Extracted data of 10,000+ global places using Selenium/BS4, cleaned/tagged data, added interactive game features, and built a UI using Lovable UI framework.</p>
-                    <div class="project-links">
-                        <a href="https://geoquest-puzzle-haven-40.lovable.app/" target="_blank">Game Link</a> |
-                        <a href="https://x.com/lucifer_x007/status/1905587624045355176" target="_blank">Twitter</a>
-                    </div>
-                    <div class="project-tags">
-                        <span>PIL</span><span>Lovable UI</span><span>Web Scraping</span><span>Selenium</span><span>BeautifulSoup</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>AutoCommit Generator</h3>
-                    <p>Built an AutoCommit Generator using Ollama and Mistral for local commit message generation. Fully local, privacy-focused, simple bash script integration (<100 lines of code).</p>
-                    <div class="project-links">
-                        <a href="https://github.com/MANISH007700/AutoCommit-Generator-Ai" target="_blank">Github</a> |
-                        <a href="https://x.com/lucifer_x007/status/1903715277793378586" target="_blank">Twitter</a>
-                    </div>
-                    <div class="project-tags">
-                        <span>Mistral</span><span>Ollama</span><span>Github</span><span>LLM</span><span>Bash</span><span>Local AI</span>
-                    </div>
-                </div>
+        <section id="about" class="section about-grid">
+            <div>
+                <p class="section-kicker">About</p>
+                <h2>Hands-on AI engineering with a builder's bias.</h2>
+            </div>
+            <div class="about-copy">
+                <p>
+                    I work on the practical layers that make GenAI useful: workflow builders, retrieval, tool calling,
+                    structured evaluation, infrastructure, and the human loops around quality. Recent work spans
+                    pharma and life-sciences workflows, course discovery, datasheet intelligence, document extraction,
+                    and medical knowledge systems.
+                </p>
+                <p>
+                    I like projects where research, product thinking, and shipping all sit at the same table.
+                    The sweet spot: taking ambiguous AI ideas and turning them into reliable systems that teams can run,
+                    measure, and improve.
+                </p>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Languages & Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Cursor</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Ollama</span>
-                        <span class="skill-tag">OpenRouter</span>
-                        <span class="skill-tag">Lovable</span>
-                        <span class="skill-tag">HuggingFace</span>
-                        <span class="skill-tag">Grok</span>
+        <section id="work" class="section">
+            <div class="section-heading">
+                <p class="section-kicker">Experience</p>
+                <h2>Selected work</h2>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="timeline-meta">
+                        <span>Aug 2025 - Present</span>
+                        <a href="https://usefulbi.com/" target="_blank" rel="noreferrer">UsefulBI</a>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h彼此
+                    <div class="timeline-content">
+                        <h3>Lead AI Engineer - GenAI</h3>
+                        <ul>
+                            <li>Designed and implemented Gen AI Studio multi-agent orchestration using AWS and Strands for modular workflows, task routing, and reusable enterprise agent patterns.</li>
+                            <li>Built a no-code drag-and-drop workflow canvas for configurable agent pipelines across CSR, PLPS, DSUR, and related operational flows.</li>
+                            <li>Created a multi-agent evaluation framework for orchestration quality, tool calls, compliance scoring, response fidelity, accuracy, and task completion.</li>
+                            <li>Built an AI-powered Quality Intelligence platform using historical quality events, multimodal evidence, vector search, and AWS/EKS deployment.</li>
+                            <li>Architected the SUNY course discovery platform and GQMD unified data repository with Smartsheet Data Vault, GPLM architecture, and Databricks pipelines.</li>
+                            <li>Led a team of 4 engineers, conducted 10+ AI interviews, and ran a company-wide AI hackathon from problem statement through judging.</li>
+                        </ul>
+                    </div>
+                </article>
 
-Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">HuggingFace Transformers</span>
-                        <span class="skill-tag">LLMs (GPT's)</span>
-                        <span class="skill-tag">Finetuned Models</span>
-                        <span class="skill-tag">RAG Systems</span>
-                        <span class="skill-tag">Multi-Agent RAGs</span>
-                        <span class="skill-tag">AI Agents</span>
+                <article class="timeline-item">
+                    <div class="timeline-meta">
+                        <span>Jan 2024 - Jul 2025</span>
+                        <a href="https://parspec.io/" target="_blank" rel="noreferrer">Parspec.io</a>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Natural Language Processing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Spacy</span>
-                        <span class="skill-tag">SciSpacy</span>
-                        <span class="skill-tag">MedXN</span>
-                        <span class="skill-tag">Librosa</span>
-                        <span class="skill-tag">PyTesseract</span>
+                    <div class="timeline-content">
+                        <h3>Machine Learning Engineer - 2</h3>
+                        <ul>
+                            <li>Built a datasheet recommendation system over 5M documents and reduced model-number mapping latency by 80% with AWS DynamoDB caching and Gemini 2.0 Flash.</li>
+                            <li>Fine-tuned Llama 3.3 70B Instruct on Modal Labs H100s for attribute extraction from custom Alpaca-format data.</li>
+                            <li>Improved family-name extraction recall from 89% to 96% using Gemini 2.5 Flash and migrated AI-dev workloads to AWS EKS.</li>
+                            <li>Built LLM-as-judge annotation workflows with GPT-4o and Gemini 2.5 Flash, reducing human annotation needs to about 74%.</li>
+                            <li>Shipped a multimodal RAG evaluation pipeline with BGE, CLIP, and FAISS, reaching 0.94 MRR retrieval and 0.96 generation accuracy.</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases & Analytics</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Neo4j</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Amplitude Analytics</span>
-                        <span class="skill-tag">Hasura-DB</span>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-meta">
+                        <span>Dec 2022 - Dec 2023</span>
+                        <a href="https://docsumo.com/" target="_blank" rel="noreferrer">Docsumo AI</a>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Cloud & Collaboration</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">GCP</span>
-                        <span class="skill-tag">Google Colab</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Docker</span>
+                    <div class="timeline-content">
+                        <h3>Machine Learning Scientist</h3>
+                        <ul>
+                            <li>Designed and deployed document KV and table extraction systems using LayoutLM, BROS, and YOLO for fixed and unstructured documents.</li>
+                            <li>Integrated ML and deep learning models into 10+ client APIs supporting $80K-$100K MRR workflows.</li>
+                            <li>Built Chat-AI with LangChain and Pinecone for product QA and support tasks.</li>
+                            <li>Reduced annotation time from one day to about two hours using GPT-4-powered KV extraction.</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Structures & Algorithms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Optimization</span>
-                        <span class="skill-tag">Algorithm Design</span>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-meta">
+                        <span>Aug 2021 - Nov 2022</span>
+                        <span>Zealth-AI (YC W21)</span>
                     </div>
-                </div>
+                    <div class="timeline-content">
+                        <h3>Machine Learning Engineer</h3>
+                        <ul>
+                            <li>Built OCR extraction and medical mapping flows for reports and prescriptions using Amazon Textract, RxNORM, MedXN, and SciSpacy.</li>
+                            <li>Created a Neo4j Aura medical knowledge graph with 11K+ relationships and 3K+ nodes.</li>
+                            <li>Used Rasa NLU to build a medical AI chatbot for symptom-based care management queries.</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p>Interested in collaborating or have a question? Feel free to reach out!</p>
-            <div class="contact-methods">
-                <a href="mailto:monalmonal007@gmail.com" target="_blank" class="cta-button primary">Send Email</a>
-                <a href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" class="cta-button secondary">Connect on LinkedIn</a>
+        <section id="projects" class="section">
+            <div class="section-heading">
+                <p class="section-kicker">Projects</p>
+                <h2>Side builds and experiments</h2>
             </div>
-            <p style="margin-top: 2rem">Location: Bangalore, 560068</p>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div>
+                        <p class="project-index">01</p>
+                        <h3>RAG - Video-Based RAG System</h3>
+                        <p>Query YouTube URLs or uploaded videos, index chunks in Qdrant, retrieve relevant frames and timestamps, and answer with a Streamlit QA interface.</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tags">
+                            <span>Qdrant</span>
+                            <span>RAG</span>
+                            <span>Video search</span>
+                            <span>Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MANISH007700/VideoRAG-System/tree/master" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="https://www.loom.com/share/c0b4aa38a47e456288c9876d7b260b93?sid=0ccaa690-f8b6-4a34-9537-fbc22d1ef9e9" target="_blank" rel="noreferrer">Loom</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div>
+                        <p class="project-index">02</p>
+                        <h3>AutoCommit Generator</h3>
+                        <p>A fully local commit-message generator using Ollama and Mistral, packaged as a fast terminal workflow in under 100 lines of bash.</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tags">
+                            <span>Mistral</span>
+                            <span>Ollama</span>
+                            <span>Local AI</span>
+                            <span>Bash</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MANISH007700/AutoCommit-Generator-Ai" target="_blank" rel="noreferrer">GitHub</a>
+                            <a href="https://x.com/lucifer_x007/status/1903715277793378586" target="_blank" rel="noreferrer">X post</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div>
+                        <p class="project-index">03</p>
+                        <h3>Company Scraper - AI-Powered Agent</h3>
+                        <p>A lightweight Relevance AI agent that turns company URLs into clean markdown briefs covering overview, products, features, audience, and integrations.</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tags">
+                            <span>Relevance AI</span>
+                            <span>LLMs</span>
+                            <span>Markdown</span>
+                            <span>Research</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://x.com/lucifer_x007" target="_blank" rel="noreferrer">X profile</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <div class="section-heading">
+                <p class="section-kicker">Skills</p>
+                <h2>Current toolkit</h2>
+            </div>
+            <div class="skills-grid">
+                <article>
+                    <h3>AI systems</h3>
+                    <p>LLMs, RAG, multi-agent workflows, LLM-as-judge, fine-tuning, retrieval evaluation, document AI, OCR, embeddings, multimodal RAG.</p>
+                </article>
+                <article>
+                    <h3>Frameworks</h3>
+                    <p>FastAPI, Flask, LangChain, LangGraph, LlamaIndex, Strands Agent, Hugging Face Transformers, PyTorch, TensorFlow.</p>
+                </article>
+                <article>
+                    <h3>Cloud and data</h3>
+                    <p>AWS, EKS, ECS, Bedrock, DynamoDB, S3, GCP, Databricks, Docker, Kubernetes, FAISS, Qdrant, Pinecone, Neo4j, MySQL.</p>
+                </article>
+                <article>
+                    <h3>Builder tools</h3>
+                    <p>Python, Linux, GitHub, Cursor, Ollama, OpenRouter, Modal Labs, Lovable, Kaggle, Tableau, Amplitude, Hasura.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div>
+                <p class="section-kicker">Contact</p>
+                <h2>Need someone to build, evaluate, or rescue an AI workflow?</h2>
+                <p>
+                    I am open to contract projects and full-time positions in applied AI, GenAI platforms,
+                    document intelligence, RAG, and agentic systems.
+                </p>
+            </div>
+            <div class="contact-panel">
+                <a class="button primary" href="mailto:manish.tinkering@gmail.com?subject=AI%20Engineering%20Opportunity%20for%20Manish">Email Manish</a>
+                <a class="button secondary" href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                <p>Bangalore, India | manish.tinkering@gmail.com</p>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 Manish Sharma. All rights reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; <span id="year">2026</span> Manish Sharma. Built for useful AI work.</p>
     </footer>
 
     <script src="script.js"></script>
