@@ -63,6 +63,7 @@ img {
 }
 
 .nav-shell {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -122,6 +123,80 @@ img {
 .nav-action:hover {
   background: var(--ink);
   color: var(--paper);
+}
+
+.visitor-widget {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 25;
+}
+
+.visitor-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  white-space: nowrap;
+  padding: 8px 13px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  appearance: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.visitor-count-tag {
+  background: #fff7d8;
+  box-shadow: 5px 5px 0 rgba(217, 119, 6, 0.2);
+}
+
+.visitor-clap-tag {
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  box-shadow: 5px 5px 0 rgba(15, 118, 110, 0.18);
+}
+
+.visitor-count-tag:hover {
+  background: #ffe9a8;
+}
+
+.visitor-clap-tag:hover {
+  background: var(--accent-dark);
+  color: var(--paper);
+}
+
+.visitor-tag:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.visitor-tag strong {
+  min-width: 24px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.visitor-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 5px rgba(217, 119, 6, 0.16);
+}
+
+.clap-icon {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .nav-toggle {
@@ -652,6 +727,10 @@ img {
     display: none;
   }
 
+  .visitor-widget {
+    margin-left: auto;
+  }
+
   .hero,
   .about-grid,
   .contact-section,
@@ -692,6 +771,46 @@ img {
   .section,
   .site-footer {
     width: min(100% - 28px, var(--max-width));
+  }
+
+  .nav-shell {
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    min-height: 118px;
+    padding: 12px 0;
+  }
+
+  .brand {
+    order: 1;
+  }
+
+  .nav-toggle {
+    order: 2;
+  }
+
+  .visitor-widget {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .visitor-tag {
+    flex: 1 1 0;
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+  .visitor-count-tag {
+    justify-content: flex-start;
+  }
+
+  .visitor-clap-tag {
+    justify-content: center;
+  }
+
+  .nav-links {
+    inset: 118px 14px auto 14px;
   }
 
   .section {
