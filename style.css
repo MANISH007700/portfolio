@@ -171,6 +171,20 @@ img {
   color: var(--paper);
 }
 
+.visitor-clap-tag:disabled {
+  cursor: wait;
+  transform: none;
+}
+
+.visitor-clap-tag.limit-reached,
+.visitor-clap-tag.limit-reached:hover {
+  border-color: #716c62;
+  background: #716c62;
+  color: #fffdf8;
+  cursor: not-allowed;
+  box-shadow: 5px 5px 0 rgba(113, 108, 98, 0.16);
+}
+
 .visitor-tag:hover {
   transform: translateY(-1px);
   text-decoration: none;

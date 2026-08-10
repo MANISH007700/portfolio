@@ -73,6 +73,7 @@ const visitorWidget = document.querySelector("[data-visitor-widget]");
 const visitorTotal = document.querySelector("#visitor-total");
 const visitorClap = document.querySelector("#visitor-clap");
 const clapTotal = document.querySelector("#clap-total");
+const clapLabel = visitorClap?.querySelector(".clap-label");
 
 const counterConfig = {
   apiBase: "https://counterapi.com/api",
@@ -123,11 +124,38 @@ const localCounter = (key, shouldIncrement = false) => {
   return next;
 };
 
-const highestCount = (...values) =>
-  Math.max(
-    0,
-    ...values.map(Number).filter((value) => Number.isFinite(value))
+const clapLimit = 5;
+const clapsGivenKey = "manishPortfolioClapsGivenV1";
+let clapsGiven = Math.min(
+  clapLimit,
+  Math.max(0, Number(storage.get(clapsGivenKey) || 0))
+);
+let clapRequestPending = false;
+
+const updateClapButton = () => {
+  if (!visitorClap) {
+    return;
+  }
+
+  const remaining = clapLimit - clapsGiven;
+  const limitReached = remaining === 0;
+
+  visitorClap.disabled = clapRequestPending || limitReached;
+  visitorClap.classList.toggle("limit-reached", limitReached);
+  visitorClap.title = limitReached
+    ? "You have used all 5 claps"
+    : `You can clap ${remaining} more ${remaining === 1 ? "time" : "times"}`;
+  visitorClap.setAttribute(
+    "aria-label",
+    limitReached
+      ? "Maximum of 5 claps reached"
+      : `Clap for Manish's profile. ${remaining} remaining`
   );
+
+  if (clapLabel) {
+    clapLabel.textContent = limitReached ? "Maxed" : "Clap";
+  }
+};
 
 const counterUrl = (counter, readOnly = false) => {
   const parts = [counterConfig.namespace, counter.action, counter.key].map(
@@ -191,49 +219,49 @@ const refreshVisitorCounters = async () => {
     return;
   }
 
-  const today = new Date().toISOString().slice(0, 10);
-  const liveVisitDateKey = "manishPortfolioLiveVisitDate";
-  const localVisitDateKey = "manishPortfolioLocalVisitDate";
-  const shouldCountLiveVisit = storage.get(liveVisitDateKey) !== today;
-  const shouldCountLocalVisit = storage.get(localVisitDateKey) !== today;
-  const legacyVisits = localCounter(
-    "manishPortfolioLocalVisits",
-    shouldCountLocalVisit
-  );
-  const legacyClaps = localCounter("manishPortfolioLocalClaps");
-
-  if (shouldCountLocalVisit) {
-    storage.set(localVisitDateKey, today);
-  }
+  updateClapButton();
 
   try {
     const [visits, claps] = await Promise.all([
-      shouldCountLiveVisit
-        ? incrementCounter(counterConfig.visitsCounter)
-        : readCounter(counterConfig.visitsCounter),
+      incrementCounter(counterConfig.visitsCounter),
       readCounter(counterConfig.clapCounter),
     ]);
 
-    if (shouldCountLiveVisit) {
-      storage.set(liveVisitDateKey, today);
-    }
-
-    setCounterText(visitorTotal, highestCount(visits, legacyVisits));
-    setCounterText(clapTotal, highestCount(claps, legacyClaps));
+    setCounterText(visitorTotal, visits);
+    setCounterText(clapTotal, claps);
   } catch {
-    setCounterText(visitorTotal, legacyVisits);
-    setCounterText(clapTotal, legacyClaps);
+    const offlineViews = localCounter("manishPortfolioOfflineViews", true);
+    const offlineClaps = localCounter("manishPortfolioOfflineClaps");
+
+    setCounterText(
+      visitorTotal,
+      counterConfig.visitsCounter.baseline + offlineViews
+    );
+    setCounterText(
+      clapTotal,
+      counterConfig.clapCounter.baseline + offlineClaps
+    );
   }
 };
 
 visitorClap?.addEventListener("click", async () => {
-  const legacyClaps = localCounter("manishPortfolioLocalClaps", true);
+  if (clapRequestPending || clapsGiven >= clapLimit) {
+    return;
+  }
+
+  clapRequestPending = true;
+  updateClapButton();
 
   try {
     const claps = await incrementCounter(counterConfig.clapCounter);
-    setCounterText(clapTotal, highestCount(claps, legacyClaps));
+    clapsGiven += 1;
+    storage.set(clapsGivenKey, String(clapsGiven));
+    setCounterText(clapTotal, claps);
   } catch {
-    setCounterText(clapTotal, legacyClaps);
+    visitorClap.title = "Clap could not be recorded. Please try again.";
+  } finally {
+    clapRequestPending = false;
+    updateClapButton();
   }
 });
 
