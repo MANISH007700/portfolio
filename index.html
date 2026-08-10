@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manish Sharma is a Lead AI Engineer building multi-agent systems, RAG platforms, document AI, and production GenAI workflows.">
+    <meta name="description" content="Manish Sharma is a Lead AI Engineer building multi-agent systems, MCP products, RAG platforms, document AI, and production GenAI workflows.">
+    <meta name="theme-color" content="#fffcf4">
+    <meta property="og:title" content="Manish Sharma - Lead AI Engineer">
+    <meta property="og:description" content="Production AI systems, multi-agent platforms, MCP products, RAG, and document intelligence.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://manish-luci.netlify.app/images/openmcpui-og.png">
+    <link rel="canonical" href="https://manish-luci.netlify.app/">
     <title>Manish Sharma - Lead AI Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +68,11 @@
                     <a class="button primary" href="ManishSharmaWork.pdf" download>Download resume</a>
                     <a class="button secondary" href="#contact">Start a conversation</a>
                 </div>
+                <a class="latest-build" href="https://openmcpui.netlify.app" target="_blank" rel="noreferrer" aria-label="Open OpenMCP UI live demo">
+                    <span>Newest build</span>
+                    <strong>OpenMCP UI</strong>
+                    <small>You ask. The client chooses. The server runs. &nearr;</small>
+                </a>
                 <div class="social-links" aria-label="Social links">
                     <a href="mailto:manish.tinkering@gmail.com" aria-label="Email Manish">
                         <img src="images/GMAIL.svg" alt="">
@@ -69,7 +80,7 @@
                     <a href="https://github.com/MANISH007700/" target="_blank" rel="noreferrer" aria-label="GitHub profile">
                         <img src="images/GITHUB.svg" alt="">
                     </a>
-                    <a href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+                    <a href="https://www.linkedin.com/in/manish-sharma-355ba3189/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
                         <img src="images/LINKEDIN.svg" alt="">
                     </a>
                     <a href="https://x.com/lucifer_x007" target="_blank" rel="noreferrer" aria-label="X profile">
@@ -92,8 +103,8 @@
             </div>
             <div class="about-copy">
                 <p>
-                    I work on the practical layers that make GenAI useful: workflow builders, retrieval, tool calling,
-                    structured evaluation, infrastructure, and the human loops around quality. Recent work spans
+                    I work on the practical layers that make GenAI useful: workflow builders, MCP clients and servers,
+                    retrieval, tool calling, structured evaluation, infrastructure, and the human loops around quality. Recent work spans
                     pharma and life-sciences workflows, course discovery, datasheet intelligence, document extraction,
                     and medical knowledge systems.
                 </p>
@@ -260,25 +271,30 @@
         <section id="projects" class="section">
             <div class="section-heading">
                 <p class="section-kicker">Projects</p>
-                <h2>Side builds and experiments</h2>
+                <h2>Products, side builds, and experiments</h2>
             </div>
             <div class="project-grid">
-                <article class="project-card">
-                    <div>
-                        <p class="project-index">01</p>
-                        <h3>OpenMemoryUI - Memory Glassbox</h3>
-                        <p>A transparent agentic memory system you can talk to: every message runs a visible six-stage pipeline across four live memory stores, with 24 real-world tools, a browser MCP client, and full provenance on every stored memory.</p>
-                    </div>
-                    <div class="project-footer">
-                        <div class="tags">
-                            <span>Agentic memory</span>
-                            <span>Tool orchestration</span>
-                            <span>MCP</span>
-                            <span>Vanilla JS</span>
+                <article class="project-card project-card-featured">
+                    <a class="project-visual" href="https://openmcpui.netlify.app" target="_blank" rel="noreferrer" aria-label="Try the OpenMCP UI live demo">
+                        <img src="images/openmcpui-og.png" alt="OpenMCP UI showing a natural-language request flowing through an MCP client to a server result">
+                    </a>
+                    <div class="project-featured-copy">
+                        <div>
+                            <p class="project-index">01 / New</p>
+                            <h3>OpenMCP UI - MCP made human</h3>
+                            <p>A visual MCP playground for building servers, connecting clients, and watching tool calls happen. Ask in plain English and the client selects the right tool, prepares its arguments, and hands execution to the server.</p>
                         </div>
-                        <div class="project-links">
-                            <a href="https://openmemoryui.netlify.app" target="_blank" rel="noreferrer">Live demo</a>
-                            <a href="https://github.com/MANISH007700/OpenMemoryUI" target="_blank" rel="noreferrer">GitHub</a>
+                        <div class="project-footer">
+                            <div class="tags">
+                                <span>Model Context Protocol</span>
+                                <span>Tool calling</span>
+                                <span>TypeScript</span>
+                                <span>Next.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://openmcpui.netlify.app" target="_blank" rel="noreferrer">Try live demo &nearr;</a>
+                                <a href="https://github.com/MANISH007700/OpenMCPUI" target="_blank" rel="noreferrer">View source &nearr;</a>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -383,7 +399,7 @@
                 <article>
                     <h3>Cloud and deployment</h3>
                     <div class="skill-list">
-                        <span>AWS</span><span>EKS</span><span>ECS</span><span>Bedrock</span><span>API Gateway</span><span>Docker</span><span>Kubernetes</span><span>Production deployments</span><span>Staging/prod partitions</span>
+                        <span>AWS</span><span>EKS</span><span>ECS</span><span>Bedrock</span><span>API Gateway</span><span>Docker</span><span>Kubernetes</span><span>Netlify</span><span>Production deployments</span><span>Staging/prod partitions</span>
                     </div>
                 </article>
                 <article>
@@ -395,7 +411,7 @@
                 <article>
                     <h3>Backend and product systems</h3>
                     <div class="skill-list">
-                        <span>Python</span><span>FastAPI</span><span>Flask</span><span>API design</span><span>Backend architecture</span><span>Workflow builders</span><span>Annotation workflows</span><span>User/FAM/QE flows</span><span>Linux</span>
+                        <span>Python</span><span>FastAPI</span><span>Flask</span><span>TypeScript</span><span>Next.js</span><span>Model Context Protocol</span><span>API design</span><span>Backend architecture</span><span>Workflow builders</span><span>Annotation workflows</span><span>User/FAM/QE flows</span><span>Linux</span>
                     </div>
                 </article>
                 <article>
@@ -418,7 +434,8 @@
             </div>
             <div class="contact-panel">
                 <a class="button primary" href="mailto:manish.tinkering@gmail.com?subject=AI%20Engineering%20Opportunity%20for%20Manish">Email Manish</a>
-                <a class="button secondary" href="https://www.linkedin.com/in/manish-sharma-%F0%9F%93%8A-355ba3189/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                <a class="button secondary" href="https://www.linkedin.com/in/manish-sharma-355ba3189/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                <a class="button secondary" href="https://github.com/MANISH007700" target="_blank" rel="noreferrer">Explore GitHub</a>
                 <p>Bangalore, India | manish.tinkering@gmail.com</p>
             </div>
         </section>

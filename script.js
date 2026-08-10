@@ -75,10 +75,10 @@ const visitorClap = document.querySelector("#visitor-clap");
 const clapTotal = document.querySelector("#clap-total");
 
 const counterConfig = {
-  apiBase: "https://api.counterapi.dev/v1",
-  namespace: "manish-sharma-portfolio-hi-widget",
-  visitsCounter: "portfolio-visits",
-  clapCounter: "profile-claps",
+  apiBase: "https://counterapi.com/api",
+  namespace: "manish-luci.netlify.app",
+  visitsCounter: { action: "view", key: "profile" },
+  clapCounter: { action: "vote", key: "profile-claps" },
 };
 
 const formatCount = (value) =>
@@ -115,13 +115,19 @@ const localCounter = (key, shouldIncrement = false) => {
   return next;
 };
 
-const counterUrl = (name, action = "") => {
-  const parts = [counterConfig.namespace, name, action]
-    .filter(Boolean)
-    .map((part) => encodeURIComponent(part));
+const highestCount = (...values) =>
+  Math.max(
+    0,
+    ...values.map(Number).filter((value) => Number.isFinite(value))
+  );
 
-  const suffix = action ? "" : "/";
-  return `${counterConfig.apiBase}/${parts.join("/")}${suffix}`;
+const counterUrl = (counter, readOnly = false) => {
+  const parts = [counterConfig.namespace, counter.action, counter.key].map(
+    (part) => encodeURIComponent(part)
+  );
+  const query = readOnly ? "?readOnly=true" : "";
+
+  return `${counterConfig.apiBase}/${parts.join("/")}${query}`;
 };
 
 const requestJson = (url) => {
@@ -153,29 +159,23 @@ const requestJson = (url) => {
   });
 };
 
-const readCounter = async (name) => {
-  const response = await requestJson(counterUrl(name));
-  const { data } = response;
-
-  if (data?.message === "record not found") {
-    return 0;
-  }
-
+const readCounter = async (counter) => {
+  const response = await requestJson(counterUrl(counter, true));
   if (!response.ok) {
     throw new Error(`Counter returned ${response.status}`);
   }
 
-  return data.count;
+  return response.data.value;
 };
 
-const incrementCounter = async (name) => {
-  const response = await requestJson(counterUrl(name, "up"));
+const incrementCounter = async (counter) => {
+  const response = await requestJson(counterUrl(counter));
 
   if (!response.ok) {
     throw new Error(`Counter returned ${response.status}`);
   }
 
-  return response.data.count;
+  return response.data.value;
 };
 
 const refreshVisitorCounters = async () => {
@@ -187,6 +187,16 @@ const refreshVisitorCounters = async () => {
   const liveVisitDateKey = "manishPortfolioLiveVisitDate";
   const localVisitDateKey = "manishPortfolioLocalVisitDate";
   const shouldCountLiveVisit = storage.get(liveVisitDateKey) !== today;
+  const shouldCountLocalVisit = storage.get(localVisitDateKey) !== today;
+  const legacyVisits = localCounter(
+    "manishPortfolioLocalVisits",
+    shouldCountLocalVisit
+  );
+  const legacyClaps = localCounter("manishPortfolioLocalClaps");
+
+  if (shouldCountLocalVisit) {
+    storage.set(localVisitDateKey, today);
+  }
 
   try {
     const [visits, claps] = await Promise.all([
@@ -200,29 +210,22 @@ const refreshVisitorCounters = async () => {
       storage.set(liveVisitDateKey, today);
     }
 
-    setCounterText(visitorTotal, visits);
-    setCounterText(clapTotal, claps);
+    setCounterText(visitorTotal, highestCount(visits, legacyVisits));
+    setCounterText(clapTotal, highestCount(claps, legacyClaps));
   } catch {
-    const shouldCountLocalVisit = storage.get(localVisitDateKey) !== today;
-    const visits = localCounter("manishPortfolioLocalVisits", shouldCountLocalVisit);
-    const claps = localCounter("manishPortfolioLocalClaps");
-
-    if (shouldCountLocalVisit) {
-      storage.set(localVisitDateKey, today);
-    }
-
-    setCounterText(visitorTotal, visits);
-    setCounterText(clapTotal, claps);
+    setCounterText(visitorTotal, legacyVisits);
+    setCounterText(clapTotal, legacyClaps);
   }
 };
 
 visitorClap?.addEventListener("click", async () => {
+  const legacyClaps = localCounter("manishPortfolioLocalClaps", true);
+
   try {
     const claps = await incrementCounter(counterConfig.clapCounter);
-    setCounterText(clapTotal, claps);
+    setCounterText(clapTotal, highestCount(claps, legacyClaps));
   } catch {
-    const claps = localCounter("manishPortfolioLocalClaps", true);
-    setCounterText(clapTotal, claps);
+    setCounterText(clapTotal, legacyClaps);
   }
 });
 
