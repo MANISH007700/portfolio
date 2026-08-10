@@ -77,8 +77,16 @@ const clapTotal = document.querySelector("#clap-total");
 const counterConfig = {
   apiBase: "https://counterapi.com/api",
   namespace: "manish-luci.netlify.app",
-  visitsCounter: { action: "view", key: "profile" },
-  clapCounter: { action: "vote", key: "profile-claps" },
+  visitsCounter: {
+    action: "view",
+    key: "profile-restored-2026",
+    baseline: 800,
+  },
+  clapCounter: {
+    action: "vote",
+    key: "profile-claps-restored-2026",
+    baseline: 655,
+  },
 };
 
 const formatCount = (value) =>
@@ -165,7 +173,7 @@ const readCounter = async (counter) => {
     throw new Error(`Counter returned ${response.status}`);
   }
 
-  return response.data.value;
+  return Number(response.data.value) + counter.baseline;
 };
 
 const incrementCounter = async (counter) => {
@@ -175,7 +183,7 @@ const incrementCounter = async (counter) => {
     throw new Error(`Counter returned ${response.status}`);
   }
 
-  return response.data.value;
+  return Number(response.data.value) + counter.baseline;
 };
 
 const refreshVisitorCounters = async () => {
