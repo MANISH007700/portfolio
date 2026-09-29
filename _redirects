@@ -1,0 +1,2 @@
+# Send the old Netlify address to the custom domain, keeping the path.
+https://manish-luci.netlify.app/* https://manishluci.com/:splat 301!
