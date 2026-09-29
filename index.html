@@ -167,14 +167,16 @@
                             <span>Workflow builder</span>
                             <span>Agent tracing</span>
                             <span>Agent evaluation harness</span>
+                            <span>Agent memory</span>
                             <span>Quality intelligence</span>
                             <span>AWS/EKS</span>
                         </div>
                         <div class="case-details">
                             <p><strong>Gen AI Studio:</strong> Designed and implemented the CSR multi-agent orchestration layer using AWS and Strands, enabling modular agent workflows, task routing, reusable orchestration patterns, and enterprise GenAI use cases.</p>
                             <p><strong>No-code agent builder:</strong> Built a generic drag-and-drop workflow canvas for composing configurable agent pipelines, connecting agent nodes, and reusing pipelines across CSR, PLPS, DSUR, and related operational flows.</p>
-                            <p><strong>Agent tracing and evaluation:</strong> Built structured multi-agent evaluation workflows to benchmark orchestration quality, tool calls, compliance score, response fidelity, accuracy, and task completion across agentic pipelines.</p>
-                            <p><strong>Engineering harness:</strong> Created reusable harness patterns for evaluating multi-agent collaboration, comparing pipeline behavior, experiment tracking, comparative testing, and validating deployment readiness before production release.</p>
+                            <p><strong>Agent evaluation and regression gating:</strong> Built the eval harness for the Decision Tree Agent on Strands and AWS Bedrock: golden datasets, tool-call trajectory graders, span-level tracing of tokens, cost and latency, a human-calibrated LLM-as-a-Judge, pass@k / pass^k consistency checks, and a regression gate that blocks releases that underperform the baseline.</p>
+                            <p><strong>Online evals:</strong> Converted reviewer decisions into production labels by comparing AI-suggested and human-final answers per decision node, giving a continuous AI-human agreement metric with zero extra instrumentation.</p>
+                            <p><strong>Agent memory and context engineering:</strong> Designed the memory layer: role-scoped short-term memory in DynamoDB, long-term episodic memory of past quality events in a vector database for grounding, and audit trails for every override, keeping agent decisions explainable.</p>
                             <p><strong>IQ Quality Intelligence:</strong> Built an AI-powered quality-events intelligence platform using historical quality events as query context, multimodal evidence, vector database retrieval, and similar-event matching for future quality checks.</p>
                             <p><strong>User, FAM, and QE workflows:</strong> Owned end-to-end workflow design, backend architecture, and AWS/EKS deployment for the quality intelligence platform.</p>
                             <p><strong>AI platform and DP:</strong> Architected the SUNY course discovery platform and designed the GQMD unified data repository by integrating Smartsheet Data Vault, GPLM architecture, and Databricks data pipelines.</p>
@@ -302,6 +304,25 @@
                 <article class="project-card">
                     <div>
                         <p class="project-index">02</p>
+                        <h3>Manish Code - Terminal coding agent harness</h3>
+                        <p>A pip-installable, Claude Code-style coding agent built from scratch: one readable agent loop with a permission engine, a kernel-level OS sandbox, automatic context compaction, read-only subagents, skills, and resumable sessions over any OpenAI-compatible model.</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="tags">
+                            <span>Agent loop</span>
+                            <span>OS sandboxing</span>
+                            <span>Context engineering</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/MANISH007700/mini-coding-harness" target="_blank" rel="noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div>
+                        <p class="project-index">03</p>
                         <h3>OpenMCP UI - MCP made human</h3>
                         <p>A visual MCP playground for building servers, connecting clients, and watching tool calls happen. Ask in plain English and the client selects the right tool, prepares its arguments, and hands execution to the server.</p>
                     </div>
@@ -321,7 +342,7 @@
 
                 <article class="project-card">
                     <div>
-                        <p class="project-index">03</p>
+                        <p class="project-index">04</p>
                         <h3>RAG - Video-Based RAG System</h3>
                         <p>Query YouTube URLs or uploaded videos, index chunks in Qdrant, retrieve relevant frames and timestamps, and answer with a Streamlit QA interface.</p>
                     </div>
@@ -341,7 +362,7 @@
 
                 <article class="project-card">
                     <div>
-                        <p class="project-index">04</p>
+                        <p class="project-index">05</p>
                         <h3>AutoCommit Generator</h3>
                         <p>A fully local commit-message generator using Ollama and Mistral, packaged as a fast terminal workflow in under 100 lines of bash.</p>
                     </div>
@@ -361,7 +382,7 @@
 
                 <article class="project-card">
                     <div>
-                        <p class="project-index">05</p>
+                        <p class="project-index">06</p>
                         <h3>Company Scraper - AI-Powered Agent</h3>
                         <p>A lightweight Relevance AI agent that turns company URLs into clean markdown briefs covering overview, products, features, audience, and integrations.</p>
                     </div>
@@ -395,7 +416,7 @@
                 <article>
                     <h3>Agent evaluation</h3>
                     <div class="skill-list">
-                        <span>Agent tracing</span><span>Engineering harness</span><span>Evaluation harness</span><span>Experiment tracking</span><span>Comparative testing</span><span>LLM-as-judge</span><span>Tool-call evaluation</span><span>Compliance scoring</span><span>Response fidelity</span><span>Accuracy checks</span><span>Task completion</span>
+                        <span>Agent tracing</span><span>Engineering harness</span><span>Evaluation harness</span><span>Experiment tracking</span><span>Comparative testing</span><span>LLM-as-judge</span><span>Tool-call evaluation</span><span>Compliance scoring</span><span>Response fidelity</span><span>Accuracy checks</span><span>Task completion</span><span>Trajectory grading</span><span>Regression gating</span><span>Online evals</span>
                     </div>
                 </article>
                 <article>
