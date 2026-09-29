@@ -606,20 +606,51 @@ img {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
 }
 
 .project-card {
   display: flex;
-  min-height: 420px;
+  grid-column: span 2;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 24px;
+  overflow: hidden;
   border: 1px solid var(--ink);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.62);
   box-shadow: 8px 8px 0 rgba(217, 119, 6, 0.2);
+}
+
+.project-card-wide {
+  grid-column: span 3;
+}
+
+.project-shot {
+  display: block;
+  aspect-ratio: 1200 / 630;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink);
+  background: #f8f4ec;
+}
+
+.project-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 320ms ease;
+}
+
+.project-shot:hover img {
+  transform: scale(1.02);
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
 }
 
 .project-card:nth-child(2) {
@@ -656,6 +687,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top left;
   transition: transform 320ms ease;
 }
 
@@ -879,7 +911,7 @@ img {
   }
 
   .project-card {
-    min-height: 320px;
+    grid-column: 1 / -1;
   }
 }
 
