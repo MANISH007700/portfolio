@@ -1,73 +1,192 @@
-const header = document.querySelector(".site-header");
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
-const navItems = Array.from(document.querySelectorAll(".nav-links a"));
-const sections = navItems
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+"use strict";
 
+document.documentElement.classList.add("js");
+const menuToggle = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("#primary-nav");
 const closeMenu = () => {
-  document.body.classList.remove("nav-open");
-  navToggle?.setAttribute("aria-expanded", "false");
-  navLinks?.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.innerHTML = 'Menu <span aria-hidden="true">＋</span>';
+  navigation.classList.remove("is-open");
 };
+menuToggle.addEventListener("click", () => {
+  const open = menuToggle.getAttribute("aria-expanded") !== "true";
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.innerHTML = `${open ? "Close" : "Menu"} <span aria-hidden="true">${open ? "−" : "＋"}</span>`;
+  navigation.classList.toggle("is-open", open);
+});
+navigation.addEventListener("click", (event) => {
+  if (event.target.closest("a")) closeMenu();
+});
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    menuToggle.getAttribute("aria-expanded") === "true"
+  ) {
+    closeMenu();
+    menuToggle.focus();
+  }
+});
+const mobileQuery = window.matchMedia("(max-width: 620px)");
+const syncMenu = () => {
+  menuToggle.hidden = !mobileQuery.matches;
+  closeMenu();
+};
+mobileQuery.addEventListener("change", syncMenu);
+syncMenu();
 
-navToggle?.addEventListener("click", () => {
-  const isOpen = navLinks?.classList.toggle("open");
-  document.body.classList.toggle("nav-open", Boolean(isOpen));
-  navToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+const filters = document.querySelector(".project-filters");
+const projects = [...document.querySelectorAll(".project-card")];
+filters.hidden = false;
+filters.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-filter]");
+  if (!button) return;
+  filters
+    .querySelectorAll("button")
+    .forEach((item) =>
+      item.setAttribute("aria-pressed", String(item === button)),
+    );
+  let count = 0;
+  projects.forEach((project) => {
+    project.hidden =
+      button.dataset.filter !== "all" &&
+      project.dataset.category !== button.dataset.filter;
+    if (!project.hidden) count++;
+  });
+  document.querySelector("#filter-status").textContent =
+    `${count} ${count === 1 ? "project" : "projects"} shown.`;
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", (event) => {
-    const target = document.querySelector(anchor.getAttribute("href"));
-
-    if (!target) {
-      return;
-    }
-
+const galleries = {
+  manishcode: {
+    title: "Manish Code",
+    images: [
+      ["images/manish-code-demo.jpg", "Planning a todo list, reading calc.py and fixing it with str_replace."],
+      ["images/manish-code-safety.jpg", "The permission policy blocking a request to delete a .env file."],
+    ],
+  },
+  openmemoryui: {
+    title: "OpenMemoryUI",
+    images: [
+      ["images/openmemoryui-demo.jpg", "The demo after three messages: all four memory stores filled, with retrieval scores."],
+      ["images/openmemoryui-launch.jpg", "Transparent agentic memory, ready to launch."],
+    ],
+  },
+  tabbouncer: {
+    title: "Tab Bouncer",
+    images: [
+      ["images/tab-bouncer-og.png", "Twelve tabs checked for a Lisbon trip: five rabbit holes, nine tabs to close."],
+      ["images/tab-bouncer-ask.jpg", "Tell it what you're working on."],
+      ["images/tab-bouncer-results.jpg", "Every tab rated and sorted, ready to close."],
+    ],
+  },
+  openmcpui: {
+    title: "OpenMCP UI",
+    images: [
+      ["images/openmcpui-live.jpg", "Say what you need. MCP handles the handoff."],
+      ["images/openmcpui-og.png", "You ask, the client chooses a tool, the server runs it."],
+    ],
+  },
+  videorag: {
+    title: "Video RAG",
+    images: [
+      ["images/videorag-frames.jpg", "The frames and timestamps retrieved as evidence for an answer."],
+      ["images/videorag-answer.jpg", "The answer, with visual and textual evidence."],
+    ],
+  },
+};
+const galleryDialog = document.querySelector(".gallery-dialog");
+const galleryImage = document.querySelector("#gallery-image");
+const previous = document.querySelector("[data-gallery-prev]");
+const next = document.querySelector("[data-gallery-next]");
+let activeGallery;
+let imageIndex = 0;
+let galleryTrigger;
+const showImage = () => {
+  const [src, caption] = activeGallery.images[imageIndex];
+  galleryImage.src = src;
+  galleryImage.alt = `${activeGallery.title}: ${caption}`;
+  document.querySelector("#gallery-caption").textContent = caption;
+  document.querySelector("#gallery-count").textContent =
+    `${imageIndex + 1} / ${activeGallery.images.length}`;
+  previous.hidden = next.hidden = activeGallery.images.length < 2;
+};
+document.querySelectorAll("[data-gallery]").forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    if (typeof galleryDialog.showModal !== "function") return;
     event.preventDefault();
-
-    const headerOffset = header?.offsetHeight || 0;
-    const targetPosition =
-      target.getBoundingClientRect().top + window.scrollY - headerOffset - 12;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: "smooth",
-    });
-
-    closeMenu();
+    activeGallery = galleries[trigger.dataset.gallery];
+    imageIndex = 0;
+    galleryTrigger = trigger;
+    document.querySelector("#gallery-title").textContent = activeGallery.title;
+    showImage();
+    galleryDialog.showModal();
+    document.body.classList.add("modal-open");
+    document.querySelector(".gallery-close").focus();
   });
 });
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      navItems.forEach((link) => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === `#${entry.target.id}`
-        );
-      });
-    });
-  },
-  {
-    rootMargin: "-35% 0px -55% 0px",
-    threshold: 0,
+const moveImage = (direction) => {
+  imageIndex =
+    (imageIndex + direction + activeGallery.images.length) %
+    activeGallery.images.length;
+  showImage();
+};
+previous.addEventListener("click", () => moveImage(-1));
+next.addEventListener("click", () => moveImage(1));
+document
+  .querySelector(".gallery-close")
+  .addEventListener("click", () => galleryDialog.close());
+galleryDialog.addEventListener("click", (event) => {
+  const rect = galleryDialog.getBoundingClientRect();
+  if (
+    event.target === galleryDialog &&
+    (event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom)
+  )
+    galleryDialog.close();
+});
+galleryDialog.addEventListener("keydown", (event) => {
+  if (event.key === "Tab") {
+    const controls = [...galleryDialog.querySelectorAll("button:not([hidden])")];
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
-);
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    moveImage(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
+galleryDialog.addEventListener("close", () => {
+  document.body.classList.remove("modal-open");
+  galleryTrigger?.focus({ preventScroll: true });
+});
 
-sections.forEach((section) => observer.observe(section));
-
-const year = document.querySelector("#year");
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+const copyButton = document.querySelector(".copy-email");
+copyButton.hidden = false;
+copyButton.addEventListener("click", async () => {
+  const status = document.querySelector(".copy-status");
+  try {
+    await navigator.clipboard.writeText("manish.tinkering@gmail.com");
+    copyButton.textContent = "Email copied ✓";
+    status.textContent = "Email address copied to clipboard.";
+    window.setTimeout(() => {
+      copyButton.innerHTML =
+        'Copy email address <span aria-hidden="true">⧉</span>';
+    }, 2400);
+  } catch {
+    status.classList.remove("sr-only");
+    status.textContent =
+      "Select and copy the address above, or click it to open your email app.";
+  }
+});
 
 const visitorWidget = document.querySelector("[data-visitor-widget]");
 const visitorTotal = document.querySelector("#visitor-total");
@@ -222,8 +341,11 @@ const refreshVisitorCounters = async () => {
   updateClapButton();
 
   try {
+    const isLocalPreview = ["localhost", "127.0.0.1"].includes(location.hostname);
     const [visits, claps] = await Promise.all([
-      incrementCounter(counterConfig.visitsCounter),
+      isLocalPreview
+        ? readCounter(counterConfig.visitsCounter)
+        : incrementCounter(counterConfig.visitsCounter),
       readCounter(counterConfig.clapCounter),
     ]);
 
