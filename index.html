@@ -189,7 +189,7 @@
           hidden
         >
           <button type="button" data-filter="all" aria-pressed="true">
-            All projects <span>05</span></button
+            All projects <span>06</span></button
           ><button type="button" data-filter="agents" aria-pressed="false">
             Agents</button
           ><button type="button" data-filter="tools" aria-pressed="false">
@@ -441,7 +441,71 @@
               >Watch a tool call <span aria-hidden="true">↗</span></a
             >
           </article>
-          <article class="project-card project-card-wide" id="video-rag" data-category="rag">
+          <article class="project-card" id="course-reader" data-category="tools">
+            <a
+              class="project-collage collage-detroit"
+              href="images/aiefs-reader-home.jpg"
+              data-gallery="coursereader"
+              aria-label="View AI Engineering from Scratch reader screenshots"
+              ><img
+                class="screen-main"
+                src="images/aiefs-reader-home.jpg"
+                width="1433"
+                height="840"
+                loading="lazy"
+                alt="The reader's start page: 542 lessons, 392 quizzes, 617 interactive figures and 78 projects, with a phase-by-phase sidebar."
+              /><img
+                class="screen-detail"
+                src="images/aiefs-reader-lesson.jpg"
+                width="1433"
+                height="840"
+                loading="lazy"
+                alt="A lesson page, The Agent Loop: Observe, Think, Act, with its learning objectives and the phase 14 lesson list."
+              /><span class="decision-token" aria-hidden="true">↗<br />↘</span
+              ><span class="image-open" aria-hidden="true"
+                >View images ↗</span
+              ></a
+            >
+            <h3>
+              <a
+                href="https://ai-engineering-from-scratch-simple.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AI Engineering from Scratch, simply <span aria-hidden="true">↗</span></a
+              >
+            </h3>
+            <div class="project-story">
+              <p>
+                AI Engineering from Scratch is a free, MIT-licensed course by
+                Rohit Ghumare, and it is rich but hard to navigate when you are
+                starting out. I built a calm reader that puts all of it in one
+                order, with a progress tracker and Previous / Next buttons.
+              </p>
+              <p>
+                All 542 lessons in 20 phases are there, with 617 interactive
+                figures running on the course’s own code, 392 quizzes and 79
+                projects. A coverage check confirms every one of the course’s
+                8,434 files is either shown or is site tooling, with none
+                missing.
+              </p>
+            </div>
+            <div class="project-links">
+              <a
+              class="text-link project-link"
+              href="https://ai-engineering-from-scratch-simple.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Start reading <span aria-hidden="true">↗</span></a
+            ><a
+              class="text-link project-link"
+              href="https://github.com/MANISH007700/ai-engineering-from-scratch-simple"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg class="gh-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> Read the code <span aria-hidden="true">↗</span></a
+            >
+            </div>
+          </article>
+          <article class="project-card" id="video-rag" data-category="rag">
             <a
               class="project-collage collage-ossean"
               href="images/videorag-frames.jpg"
@@ -473,7 +537,7 @@
                 >Video RAG <span aria-hidden="true">↗</span></a
               >
             </h3>
-            <div class="project-story"><p>Can you cite a moment in a video the way you’d cite a page? Video RAG indexes a YouTube video in Qdrant, then answers questions with the frames and timestamps it used as evidence.</p><p>The answer view shows the frames it retrieved next to the answer, so you can check its reasoning instead of taking it on trust. There’s a short Loom walkthrough, too.</p></div>
+            <div class="project-story"><p>Can you cite a moment in a video the way you’d cite a page? Video RAG indexes a YouTube video in Qdrant, then answers questions with the frames and timestamps it used as evidence.</p><p>The answer view shows the frames it retrieved next to the answer, so you can check its reasoning instead of taking it on trust.</p></div>
             <div class="project-links">
               <a
               class="text-link project-link"
@@ -481,12 +545,6 @@
               target="_blank"
               rel="noopener noreferrer"
               ><svg class="gh-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg> View on GitHub <span aria-hidden="true">↗</span></a
-            ><a
-              class="text-link project-link"
-              href="https://www.loom.com/share/c0b4aa38a47e456288c9876d7b260b93?sid=0ccaa690-f8b6-4a34-9537-fbc22d1ef9e9"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Watch the Loom <span aria-hidden="true">↗</span></a
             >
             </div>
           </article>
