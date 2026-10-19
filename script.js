@@ -93,6 +93,13 @@ const galleries = {
       ["images/videorag-answer.jpg", "The answer, with visual and textual evidence."],
     ],
   },
+  coursereader: {
+    title: "AI Engineering from Scratch, simply",
+    images: [
+      ["images/aiefs-reader-home.jpg", "The start page: the whole course in one order, with where-to-start suggestions."],
+      ["images/aiefs-reader-lesson.jpg", "A lesson, with its objectives and the phase's lesson list beside it."],
+    ],
+  },
 };
 const galleryDialog = document.querySelector(".gallery-dialog");
 const galleryImage = document.querySelector("#gallery-image");
