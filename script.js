@@ -100,6 +100,13 @@ const galleries = {
       ["images/aiefs-reader-lesson.jpg", "A lesson, with its objectives and the phase's lesson list beside it."],
     ],
   },
+  keepsake: {
+    title: "Keepsake",
+    images: [
+      ["images/keepsake-landing.jpg", "Pick a photo, choose a challenge and a soundtrack. The photo never leaves your device."],
+      ["images/keepsake-analytics.jpg", "The public analytics dashboard: anonymous, aggregate counts only."],
+    ],
+  },
 };
 const galleryDialog = document.querySelector(".gallery-dialog");
 const galleryImage = document.querySelector("#gallery-image");
