@@ -57,6 +57,15 @@ filters.addEventListener("click", (event) => {
 });
 
 const galleries = {
+  notchisland: {
+    title: "Notch Island",
+    images: [
+      ["images/notch-island-approve.jpg", "An edit waiting in the notch, with its diff and Allow, Always allow and Deny."],
+      ["images/notch-island-agents.jpg", "Claude Code, Codex and OpenCode working at once, one card each."],
+      ["images/notch-island-question.jpg", "A question from Claude, answered with a click or ⌘1-⌘4."],
+      ["images/notch-island-settings.jpg", "Settings: each agent, hover, approvals, plan usage and shortcuts switch on or off."],
+    ],
+  },
   manishcode: {
     title: "Manish Code",
     images: [
