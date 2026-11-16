@@ -66,6 +66,13 @@ const galleries = {
       ["images/notch-island-settings.jpg", "Settings: each agent, hover, approvals, plan usage and shortcuts switch on or off."],
     ],
   },
+  decisionlab: {
+    title: "Decision Head Lab",
+    images: [
+      ["images/decision-lab-network.jpg", "20 neurons wired to the LM head: each output's score and its softmax probability."],
+      ["images/decision-lab-shapes.jpg", "The same hidden vector through a yes/no, a pick-one and an ordered score head."],
+    ],
+  },
   manishcode: {
     title: "Manish Code",
     images: [

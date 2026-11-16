@@ -254,6 +254,55 @@
             >
             </div>
           </article>
+          <article class="project-card project-card-wide" id="decision-head-lab" data-category="tools">
+            <a
+              class="project-collage collage-ossean"
+              href="images/decision-lab-network.jpg"
+              data-gallery="decisionlab"
+              aria-label="View Decision Head Lab screenshots"
+              ><img
+                class="screen-main"
+                src="images/decision-lab-network.jpg"
+                width="1600"
+                height="900"
+                loading="lazy"
+                alt="Decision Head Lab: 20 hidden neurons wired to a 6-word LM head, with each output's score and softmax probability. bug wins at 99.2%."
+              /><img
+                class="screen-detail"
+                src="images/decision-lab-shapes.jpg"
+                width="1600"
+                height="900"
+                loading="lazy"
+                alt="Three decision heads on the same hidden vector: a yes/no head at 99%, a pick-one head choosing bug, and an ordered urgency score of 2.83 out of 3."
+              /><span class="image-open" aria-hidden="true"
+                >View images ↗</span
+              ></a
+            >
+            <h3>
+              <a
+                href="https://claude.ai/artifact/AoekpTPBYJNRfPM2LVLySg"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Decision Head Lab <span aria-hidden="true">↗</span></a
+              >
+            </h3>
+            <div class="project-story"><p>Everyone talks about decision models, but few people can say what changes under the hood. It’s one matrix. An LLM’s last layer scores every word in the vocabulary, and a decision model swaps that layer for one with a row per option. I built this lab to make that visible.</p><p>A toy model with 20 neurons shows every weight. You can swap the LM head for a random, copied or trained decision head, drag a neuron to see how little one number matters, and press Play to watch 60 weights learn the task. The same hidden vector then drives a yes/no head, a pick-one head and an ordered score head, with the JSON each one returns.</p></div>
+            <div class="project-links">
+              <a
+              class="text-link project-link"
+              href="https://claude.ai/artifact/AoekpTPBYJNRfPM2LVLySg"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Try the lab <span aria-hidden="true">↗</span></a
+            ><a
+              class="text-link project-link"
+              href="https://x.com/lucifer_x007/status/2122341361395597546"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Read the thread <span aria-hidden="true">↗</span></a
+            >
+            </div>
+          </article>
           <article class="project-card" id="manish-code" data-category="agents">
             <a
               class="project-collage collage-afk"
